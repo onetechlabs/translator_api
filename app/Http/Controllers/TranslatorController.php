@@ -17,7 +17,7 @@ class TranslatorController extends Controller
     }
 
     public function languageList(Request $request) {
-      $language_lists = Languagelist::all()->orderBy('id', 'desc')->get();
+      $language_lists = Languagelist::orderBy('id', 'desc')->get();
       $total_language_list = Languagelist::all()->count();
       $out = [
           "message" => "Success",

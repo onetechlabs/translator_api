@@ -16,6 +16,7 @@ $router->post("/user-login", "AuthController@userLogin");
 $router->post("/user-create", "AuthController@userCreate");
 $router->post("/user-change-password", ['middleware' => 'if_userlogin', 'uses' => "AuthController@userChangePassword"]);
 $router->post("/translate", "TranslatorController@translateResults");
+$router->post("/dropdown-language-lists","TranslatorController@languageList");
 
 //Search Engine List
 $router->post("/language-lists", ['middleware' => 'if_userlogin', 'uses' => "TranslatorController@language_lists"]);
